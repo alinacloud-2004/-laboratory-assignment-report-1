@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости грузоперевозки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>🚚 Калькулятор грузоперевозки</h1>
+            <p class="subtitle">Рассчитайте стоимость доставки груза — быстро и без нервов</p>
+        </div>
+    </header>
 
+    <main class="container">
+        <section class="calculator-card">
+            <h2>Параметры перевозки</h2>
+            <form id="calc-form" novalidate>
+                <div class="form-group">
+                    <label for="distance">Расстояние (км)</label>
+                    <input type="text" id="distance" name="distance" placeholder="Например: 150" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="weight">Вес груза (кг)</label>
+                    <input type="text" id="weight" name="weight" placeholder="Например: 500" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="volume">Объём груза (м³)</label>
+                    <input type="text" id="volume" name="volume" placeholder="Например: 2.5" autocomplete="off">
+                </div>
+
+                <div id="error-box" class="error-box" role="alert" aria-live="polite"></div>
+
+                <button type="submit" class="btn btn-primary">Рассчитать стоимость</button>
+            </form>
+
+            <div id="result-box" class="result-box" aria-live="polite"></div>
+        </section>
+
+        <section class="journal-card">
+            <div class="journal-header">
+                <h2>Журнал запросов</h2>
+                <button type="button" id="clear-journal" class="btn btn-secondary">Очистить журнал</button>
+            </div>
+            <ul id="journal-list" class="journal-list"></ul>
+            <p id="journal-empty" class="journal-empty">Пока записей нет. Сделайте первый расчёт — и он появится здесь.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Калькулятор грузоперевозки. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
